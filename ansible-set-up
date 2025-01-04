@@ -8,3 +8,18 @@ server2 ansible_user=ec2-user
 ansible_python_interpretor=/usr/bin/python3
 ansible_ssh_private_key_file=/root/keys/new-keypair.pem    # change keyfile permission to chmod 600 new-keypair  (it is your private key copy it from ur local)
 
+if another server we want too add then 
+
+[servers]
+server1 ansible_host=52.90.223.99
+server2 ansible_host=35.175.196.42
+server1 ansible_user=ubuntu
+server2 ansible_user=ec2-user
+server3 ansible_host=54.159.44.157                    # we have added 3rd server
+server3 ansible_user=ec2-user
+server3 ansible_ssh_private_key_file=/root/keys/red-hat.pem
+
+
+[all:vars]
+ansible_python_interpretor=/usr/bin/python3
+ansible_ssh_private_key_file=/root/keys/new-keypair.pem
