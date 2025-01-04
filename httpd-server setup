@@ -1,0 +1,20 @@
+- hosts: servers
+  user: ansible
+  become: yes
+
+
+  tasks:
+    - name: install nginx/httpd
+      apt:
+         name: nginx
+         state: present
+
+    - name: start nginx/httpd
+      service:
+         name: nginx
+         enabled: yes
+
+    - name: copy index.html
+      copy:
+       src: index.html
+       dest: /var/www/html
